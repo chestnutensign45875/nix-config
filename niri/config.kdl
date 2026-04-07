@@ -14,7 +14,7 @@ input {
 
             // For example:
             // layout "us,ru"
-            // options "grp:win_space_toggle,compose:ralt,ctrl:nocaps"
+             options "caps:escape"
 
             // If this section is empty, niri will fetch xkb settings
             // from org.freedesktop.locale1. You can control these using
@@ -367,6 +367,7 @@ binds {
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "noctalia-shell" "--toggle-launcher"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Shift+B hotkey-overlay-title="Launch Browser: Firefox" { spawn "firefox"; }
+    Mod+Shift+Y hotkey-overlay-title="Launch Youtube" { spawn "firefox" "https://www.youtube.com"; }
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
