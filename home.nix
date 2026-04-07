@@ -101,7 +101,7 @@
                 lspkind-nvim
         ];
 
-        extraLuaConfig = ''
+        initLua = ''
             -- == CORE OPTIONS ==
             vim.opt.number = true
             vim.opt.relativenumber = true

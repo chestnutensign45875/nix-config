@@ -363,8 +363,9 @@ binds {
     Mod+Shift+Slash { show-hotkey-overlay; }
 
     // Suggested binds for running programs: terminal, app launcher, screen locker.
-    Mod+T hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: alacritty" { spawn "alacritty"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "noctalia-shell" "--toggle-launcher"; }
+    Mod+E hotkey-overlay-title="Open file explorer" { spawn "nemo" ; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
     Mod+Shift+B hotkey-overlay-title="Launch Browser: Firefox" { spawn "firefox"; }
     Mod+Shift+Y hotkey-overlay-title="Launch Youtube" { spawn "firefox" "https://www.youtube.com"; }

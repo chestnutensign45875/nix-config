@@ -137,6 +137,7 @@
     kdePackages.dolphin
     libsecret
     noctalia-shell
+    nemo
   ];
 
   hardware.bluetooth.enable = true;
