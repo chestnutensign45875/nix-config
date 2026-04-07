@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
   let
-    home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/release-25.11.tar.gz";
+    home-manager = builtins.fetchTarball "https://github.com/nix-community/home-manager/archive/master.tar.gz";
   in
 {
   imports =
@@ -92,7 +92,14 @@
     shell = pkgs.zsh;
   };
 
+  xdg.portal = {
+      enable = true;
+      extraPortals = [ pkgs.kdePackages.xdg-desktop-portal-kde ];
+      config.common.default = [ "kde"];
+  };
+
   programs.zsh.enable = true;
+  programs.niri.enable = true;
 
   # Install firefox.
   programs.firefox.enable = true;
@@ -126,6 +133,10 @@
     nodejs_24
     bun
     gemini-cli
+    kdePackages.polkit-kde-agent-1
+    kdePackages.dolphin
+    libsecret
+    noctalia-shell
   ];
 
   hardware.bluetooth.enable = true;
@@ -141,6 +152,8 @@
   LIBVA_DRIVER_NAME = "i965";
   LIBVA_FLAGS = "2";
   MOZ_DISABLE_RDD_SANDBOX = "1";
+  XDG_CURRENT_DESKTOP = "kde";
+  XDG_SESSION_DESKTOP = "kde";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -155,6 +168,11 @@
 
   # Enable the OpenSSH daemon.
   # services.openssh.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
+  security.pam.services.login.enableGnomeKeyring = true;
+  security.pam.services.sddm.enableGnomeKeyring = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];

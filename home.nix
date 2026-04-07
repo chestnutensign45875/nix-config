@@ -23,8 +23,12 @@
             opencode
             codex
             alacritty
+            nwg-look
+            wayland-pipewire-idle-inhibit
             nerd-fonts.agave
     ];
+
+    xdg.configFile."niri/config.kdl".source = ./niri/config.kdl;
 
     programs.git = {
         enable = true;
@@ -76,7 +80,7 @@
                 rust-analyzer
                 clang-tools
                 pyright
-                nodePackages.typescript-language-server
+                typescript-language-server
         ];
 
         plugins = with pkgs.vimPlugins; [
