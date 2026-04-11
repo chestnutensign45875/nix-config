@@ -138,6 +138,7 @@
     libsecret
     noctalia-shell
     nemo
+    brightnessctl
   ];
 
   hardware.bluetooth.enable = true;
